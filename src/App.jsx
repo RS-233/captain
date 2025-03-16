@@ -22,7 +22,7 @@ const App = () => {
           
           // Send the location to the backend (Optional)
           try {
-            const response = await axios.post('http://localhost:4000/api/bus/captain-login', {
+            const response = await axios.post('https://final-server-gules.vercel.app/api/bus/captain-login', {
               busnumber: busNumber,
               latitude: latitude,
               longitude: longitude
