@@ -12,7 +12,7 @@ const Home = ({busDetails, setLogin}) => {
   const busnumber = busDetails.busnumber;
   const onLogout = async() => {
     try {
-      const response = await axios.post('https://server-lime-eight.vercel.app/api/bus/captain-logout', { busnumber: busnumber });
+      const response = await axios.post('https://backend-chi-one-67.vercel.app/api/bus/captain-logout', { busnumber: busnumber });
       if(!response){
         console.log("error")
       }else{
@@ -34,7 +34,7 @@ const Home = ({busDetails, setLogin}) => {
 
           // Send the location to the backend (Optional)
           try {
-            const response = await axios.post('https://server-lime-eight.vercel.app/api/bus/update-location', {
+            const response = await axios.post('https://backend-chi-one-67.vercel.app/api/bus/update-location', {
               busnumber: busnumber,
               latitude: latitude,
               longitude: longitude
