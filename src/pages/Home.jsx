@@ -12,7 +12,7 @@ const Home = ({busDetails, setLogin}) => {
   const busnumber = busDetails.busnumber;
   const onLogout = async() => {
     try {
-      const response = await axios.post('https://final-server-gules.vercel.app/api/bus/captain-logout', { busnumber: busnumber });
+      const response = await axios.post('https://server-lime-eight.vercel.app/api/bus/captain-logout', { busnumber: busnumber });
       if(!response){
         console.log("error")
       }else{
