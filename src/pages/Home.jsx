@@ -34,7 +34,7 @@ const Home = ({busDetails, setLogin}) => {
 
           // Send the location to the backend (Optional)
           try {
-            const response = await axios.post('http://localhost:4000/api/bus/update-location', {
+            const response = await axios.post('https://server-lime-eight.vercel.app/api/bus/update-location', {
               busnumber: busnumber,
               latitude: latitude,
               longitude: longitude
