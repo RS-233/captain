@@ -28,7 +28,7 @@ const AllBookings = ({ busid }) => {
   useEffect(() => {
     // Update bookings every 4 seconds, if busid is available
     if (busId) {
-      const interval = setInterval(() => fetchBookings(busId), 4000);
+      const interval = setInterval(() => fetchBookings(busid), 4000);
       return () => clearInterval(interval); // Cleanup on component unmount
     }
   }, [busid]);
