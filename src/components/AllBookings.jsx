@@ -24,10 +24,12 @@ const AllBookings = ({ busid }) => {
   }, [busid]); // Trigger the fetch when `busid` changes
 
   useEffect(() => {
-    // Update location every 5 seconds
-    const interval = setInterval(fetchBookings, 4000);
-    return () => clearInterval(interval); // Cleanup on component unmount
-  }, []);
+    // Update bookings every 4 seconds, if busid is available
+    if (busid) {
+      const interval = setInterval(() => fetchBookings(busid), 4000);
+      return () => clearInterval(interval); // Cleanup on component unmount
+    }
+  }, [busid]);
 
   return (
     <div className="allBookings">
