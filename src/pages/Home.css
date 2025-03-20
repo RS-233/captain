@@ -1,0 +1,86 @@
+.home{
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.home-upper{ 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px 0px rgb(139, 139, 139);
+    gap: 20px;
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.captain-details{
+    text-align: center;
+}
+.bus-details{
+    width: 80%;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(75, 75, 75);
+    padding-top: 50px;
+}
+.logout-button{
+    border: none;
+    width: 200px;
+    height: 30px;
+    margin-top: 25px;
+    background-color: rgb(248, 119, 44);
+    color: white;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.home-lower{
+    padding: 20px;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 10px;
+    height: 450px;
+    width: 900px;
+}
+.captain-images{
+    border: 1px solid rgb(119, 119, 127);
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgb(252, 198, 143);
+    width: 150px;
+}
+
+@media screen and (max-width: 1000px){
+    .home-upper{
+        width: 100%;
+    }
+    .home-lower{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 600px){
+    .captain-images{
+       width: 80px;
+    }
+    .bus-details{
+       padding-top: 18px;
+       font-size: 10px;
+       width: 100%;
+    }
+    .logout-button{
+        font-size: 12px;
+        height: 25px;
+        border-radius: 3px;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .home-upper{
+        font-size: 10px;
+        height: 130px;
+        gap: 10px;
+    }
+    .home-lower{
+        width: 100%;
+    }
+}

@@ -1,6 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import axios from "axios"
 import { useEffect } from 'react'
+import './Home.css'
+import { assets } from "../assets/assets"
+import AllBookings from "../components/AllBookings"
 
 const Home = ({busDetails, setLogin}) => {
 
@@ -51,18 +55,32 @@ const Home = ({busDetails, setLogin}) => {
   };
 
   useEffect(() => {
-    // Update location every 10 seconds
+    // Update location every 5 seconds
     const interval = setInterval(updateLocation, 5000);
     return () => clearInterval(interval); // Cleanup on component unmount
   }, []);
 
 
   return (
-    <div>
-      <button onClick={() => onLogout()}>logout</button>
-      <h1>WelCome Captain</h1>
-      <p>{busDetails.busname}</p>
-      <p>{busDetails.busnumber}</p>
+    <div className="home">
+      <div className="home-upper">
+        <div className="captain-details">
+         <img src={assets.captain} className="captain-images" alt="" />
+         <h3>Welcome Captain</h3>
+        </div>
+        <div className="bus-details">
+        <p>Bus Name : {busDetails.busname}</p>
+        <p>Bus Number : {busDetails.busnumber}</p>
+        <p>Empty Seats : {busDetails.availableseats}</p>
+        <p>Bus Status : {busDetails.status}</p>
+        <button onClick={() => onLogout()} className="logout-button">logout</button>
+        </div>
+        
+      </div>
+      <hr />
+      <div className="home-lower">
+         <AllBookings busid = {busDetails._id}/> 
+      </div>
     </div>
   )
 }

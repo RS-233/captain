@@ -1,5 +1,7 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
-import axios from 'axios'
+import { assets } from '../assets/assets';
+import './Login.css';
 
 const Login = ({onLogin}) => {
 
@@ -9,36 +11,32 @@ const Login = ({onLogin}) => {
     e.preventDefault();
     onLogin(busNumber);  // Call the parent function to handle login
   };
+  console.log(busNumber);
 
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label htmlFor="busNumber" className="block text-sm font-medium text-gray-700">
-              Bus Number
-            </label>
-            <input
-              type="text"
-              id="busNumber"
-              required
-             
-              onChange={(e) => setBusNumber(e.target.value)}
-              className="mt-2 p-2 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter bus number"
-            />
+    <div className="login">
+        <div className="login-main">
+          <div className="login-main-header">
+            <img src={assets.busjourney} alt="" />
+          <h1>Welcome Captain</h1>
+          <p> </p>
           </div>
-          <button
-            type="submit"
-            className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            Log In
-          </button>
-        </form>
+          <form onSubmit={handleSubmit}>
+            <div className="login-main-sections">
+                <label htmlFor="">Bus Number</label>
+                <br />
+                <input className="login-main-sections-input" type="text" placeholder="Up21ABXXXX" name='email' onChange={(e) => setBusNumber(e.target.value)} required />
+            </div>
+            <div className="login-main-sections">
+                <input type="checkbox" required /> i agree all terms and conditions
+            </div>
+            <div className="login-main-button">
+              <button className="login-main-login-button" type='submit'><b>Login</b></button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
   );
 };
 

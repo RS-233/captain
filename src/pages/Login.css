@@ -1,0 +1,135 @@
+.Link{
+    text-decoration: none;
+    color: black;
+  }
+
+.login{
+    font-family: "Rubik", serif;
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    font-size: 13px;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    font-weight: 500;
+}
+.login-main{
+    background-color: white;
+    border-radius: 30px;
+    padding: 20px 40px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0px 0px 10px 1px #30536f3e;
+    margin: 20px;
+}
+.login-main-header{
+    margin-top: -20px;
+    margin-bottom: 15px;
+}
+.login-main-header img{
+    width: 100px;
+    margin-bottom: -10px;
+}
+.login-main-header p{
+    font-size: 15px;
+}
+
+.login-main p{
+    margin-bottom: -5px;
+}
+
+.login-main-sections, .signup-main-sections{
+    width: 100%;
+    text-align: start;
+    margin: 15px 0px;
+}
+.login-main-button{
+    display: flex;
+    gap: 10px;
+}
+.login-main-sections span{
+    color: #ff7300;
+    font-weight: 550;
+    cursor: pointer;
+}
+.login-main-sections-input{
+    border: 1px solid black;
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 5px;
+    height: 35px;
+    padding: 0px 5px;
+}
+.forgotpassword-div{
+    
+    margin: 10px 0px -18px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+.forgotpassword-div-link{
+    text-decoration: none;
+}
+.login-main-login-button{
+    width: 100%;
+    height: 36px;
+    background-color: #00b925;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.login-main-cancle-button{
+    width: 100%;
+    height: 36px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.login-main-sections-line h3{
+   width: 100%;
+   text-align: center; 
+   border-bottom: 1px solid gray; 
+   line-height: 0.1em;
+   margin: 12px 0 20px;
+   margin-bottom: -5px;
+}
+.login-main-sections-line h3 span{
+    color: rgb(54, 54, 54);
+    font-size: 16px;
+    background-color:#fff; 
+    padding: 0px 5px; 
+}
+.login-main-sections-social{
+    border: 1px solid gray;
+    border-radius: 7px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+    cursor: pointer;
+}
+.login-main-sections-social img{
+    width: 22px;
+}
+.signup-main-sections-1{
+    margin: 10px 0px;
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+}
+.box{
+    text-align: start;
+    width: 50%;
+}
+
+@media (max-width: 550px){
+    .login-main{
+        border: none;
+        margin: 15px;
+        border-radius: 15px;
+    }
+}

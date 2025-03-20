@@ -1,15 +1,13 @@
 import { useState } from 'react'
 import Login from './pages/Login'
 import axios from 'axios'
-
 import Home from './pages/Home'
-import Map from './pages/Map'
 
 
 
 const App = () => {
   const [login, setLogin] = useState(false)
-  const [busNumber, setBusNumber] = ('')
+  const busNumber = '';
   const [busDetails, setBusDetails] = useState('');
   console.log(busNumber);
   const onLogin = async(busNumber) => {
@@ -52,12 +50,11 @@ const App = () => {
   // search coordinate by using place name -> 
   https://api.openrouteservice.org /geocode/search? api_key = 5b3ce3597851110001cf6248136bace681094a669a5df3dc48f1dba0& text = new delhi railwar station& sources = geonames& size = 1
 
-  
+  console.log(login);
 
   return (
     <div>
      { login ? <Home  busDetails={busDetails} setLogin={setLogin} /> : <Login onLogin={onLogin}/> }
-     <Map/>
     </div>
   )
 }
