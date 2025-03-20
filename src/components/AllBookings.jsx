@@ -9,9 +9,9 @@ const AllBookings = ({ busid }) => {
 
   const busId = busid;
 
-  const fetchBookings = async (busId) => {
+  const fetchBookings = async (bus) => {
     try {
-      const response = await axios.get(`https://backend-chi-one-67.vercel.app/api/Booking/getbusbookings/${busId}`);
+      const response = await axios.get(`https://backend-chi-one-67.vercel.app/api/Booking/getbusbookings/${bus}`);
       console.log(response.data);
         setBookings(response.data.busBookings);
     } catch (error) {
@@ -28,6 +28,7 @@ const AllBookings = ({ busid }) => {
   useEffect(() => {
     // Update bookings every 4 seconds, if busid is available
     if (busId) {
+      console.log(busId)
       const interval = setInterval(() => fetchBookings(busid), 4000);
       return () => clearInterval(interval); // Cleanup on component unmount
     }
