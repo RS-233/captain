@@ -9,7 +9,7 @@ const AllBookings = ({ busid }) => {
 
   const fetchBookings = async (busid) => {
     try {
-      const response = await axios.get(`http://localhost:4000/api/Booking/getbusbookings/${busid}`);
+      const response = await axios.get(`https://server-lime-eight.vercel.app/api/Booking/getbusbookings/${busid}`);
       console.log(response.data);
         setBookings(response.data.busBookings);
     } catch (error) {
