@@ -57,7 +57,7 @@ const Home = ({busDetails, setLogin}) => {
 
   useEffect(() => {
     // Update location every 5 seconds
-    const interval = setInterval(updateLocation, 5000);
+    const interval = setInterval(updateLocation, 7000);
     return () => clearInterval(interval); // Cleanup on component unmount
   }, []);
 
