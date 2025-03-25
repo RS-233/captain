@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import axios from "axios"
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './Home.css'
 import { assets } from "../assets/assets"
 import AllBookings from "../components/AllBookings"
