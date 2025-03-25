@@ -8,6 +8,8 @@ import AllBookings from "../components/AllBookings"
 
 const Home = ({busDetails, setLogin}) => {
 
+  const [location, setLocation] = useState(['']);
+
   console.log(busDetails)
   const busnumber = busDetails.busnumber;
   const onLogout = async() => {
@@ -31,7 +33,6 @@ const Home = ({busDetails, setLogin}) => {
         async (position) => {
           const latitude = position.coords.latitude;
           const longitude = position.coords.longitude;
-
           // Send the location to the backend (Optional)
           try {
             const response = await axios.post('https://backend-chi-one-67.vercel.app/api/bus/update-location', {
@@ -39,7 +40,7 @@ const Home = ({busDetails, setLogin}) => {
               latitude: latitude,
               longitude: longitude
             });
-            console.log(response.data.response.location);
+            setLocation(response.data.response.location);
           } catch (err) {
             console.error("Error sending location:", err);
           }
@@ -73,6 +74,7 @@ const Home = ({busDetails, setLogin}) => {
         <p>Bus Number : {busDetails.busnumber}</p>
         <p>Empty Seats : {busDetails.availableseats}</p>
         <p>Bus Status : {busDetails.status}</p>
+          <p>bus Location: {location}</p>
         <button onClick={() => onLogout()} className="logout-button">logout</button>
         </div>
         
